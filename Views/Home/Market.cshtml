@@ -1,0 +1,324 @@
+﻿@{
+    ViewData["Title"] = "Acasă";
+}
+
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Bine ai venit în Lumea Jucăriilor!</h1>
+        <p class="lead mb-4">Descoperă colecția noastră magică de jucării pentru toate vârstele</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="#categorii" class="btn btn-toy btn-lg">Explorează Jucăriile</a>
+            <a href="#promotii" class="btn btn-light btn-lg">Vezi Promoțiile</a>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section id="categorii" class="my-5">
+    <div class="container">
+        <h2 class="text-center mb-5 position-relative">
+            <span class="badge bg-primary position-absolute" style="top: -15px; right: -15px; transform: rotate(15deg);">Nou</span>
+            Categorii de Jucării
+        </h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/api/placeholder/400/250" alt="Jucării pentru bebeluși" class="img-fluid">
+                    <div class="card-body p-4">
+                        <h3 class="card-title">Pentru Bebeluși</h3>
+                        <p class="card-text">Jucării sigure și educative pentru cei mai mici.</p>
+                        <a href="#" class="btn btn-toy mt-2">Descoperă</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/api/placeholder/400/250" alt="Jucării de pluș" class="img-fluid">
+                    <div class="card-body p-4">
+                        <h3 class="card-title">Jucării de Pluș</h3>
+                        <p class="card-text">Ursuleți, animăluțe și personaje drăgălașe pentru îmbrățișări.</p>
+                        <a href="#" class="btn btn-toy mt-2">Descoperă</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/api/placeholder/400/250" alt="Jocuri educative" class="img-fluid">
+                    <div class="card-body p-4">
+                        <h3 class="card-title">Jocuri Educative</h3>
+                        <p class="card-text">Învață prin joacă cu cele mai distractive jocuri educative.</p>
+                        <a href="#" class="btn btn-toy mt-2">Descoperă</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/api/placeholder/400/250" alt="Jucării de constructie" class="img-fluid">
+                    <div class="card-body p-4">
+                        <h3 class="card-title">Construcții</h3>
+                        <p class="card-text">Cuburi, seturi de constructii și alte jucării pentru micii arhitecți.</p>
+                        <a href="#" class="btn btn-toy mt-2">Descoperă</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/api/placeholder/400/250" alt="Păpuși" class="img-fluid">
+                    <div class="card-body p-4">
+                        <h3 class="card-title">Păpuși</h3>
+                        <p class="card-text">O gamă variată de păpuși pentru toate vârstele.</p>
+                        <a href="#" class="btn btn-toy mt-2">Descoperă</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="/api/placeholder/400/250" alt="Jocuri de societate" class="img-fluid">
+                    <div class="card-body p-4">
+                        <h3 class="card-title">Jocuri de Societate</h3>
+                        <p class="card-text">Distracție garantată pentru toată familia cu jocurile noastre de societate.</p>
+                        <a href="#" class="btn btn-toy mt-2">Descoperă</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section id="produse-populare" class="my-5 py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Cele Mai Populare Jucării</h2>
+
+        <div class="row">
+            @for (int i = 1; i <= 4; i++)
+            {
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card h-100 product-card border-0 shadow-sm">
+                    <span class="badge bg-danger position-absolute" style="top: 10px; right: 10px;">-20%</span>
+                    <img src="/api/placeholder/280/280" class="card-img-top" alt="Jucărie populară">
+                    <div class="card-body">
+                        <h5 class="card-title">Jucărie Populară @i</h5>
+                        <div class="d-flex text-warning mb-2">
+                            @for (int star = 1; star <= 5; star++)
+                                {
+                            <i class="fas fa-star"></i>
+                                }
+                            <span class="text-muted ms-2">(24)</span>
+                        </div>
+                        <p class="card-text">Descriere scurtă a jucăriei populare @i cu funcționalități speciale.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div>
+                                <span class="text-muted text-decoration-line-through">159 lei</span>
+                                <span class="ms-2 fw-bold text-danger">129 lei</span>
+                            </div>
+                            <button class="btn btn-toy btn-sm">
+                                <i class="fas fa-shopping-cart me-1"></i> Adaugă
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary btn-lg">Vezi Toate Produsele</a>
+        </div>
+    </div>
+</section>
+
+<!-- Promotions Section -->
+<section id="promotii" class="my-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Promoții Speciale</h2>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="promo-card position-relative rounded overflow-hidden">
+                    <img src="/api/placeholder/600/300" alt="Promoție jucării" class="img-fluid w-100">
+                    <div class="position-absolute top-0 bottom-0 start-0 end-0 bg-dark bg-opacity-50 d-flex flex-column justify-content-center align-items-center text-white p-4">
+                        <h3 class="display-6 fw-bold">Reduceri de Primăvară</h3>
+                        <p class="lead">Până la 50% reducere la jucăriile de exterior</p>
+                        <a href="#" class="btn btn-toy mt-3">Profită Acum</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="promo-card position-relative rounded overflow-hidden">
+                    <img src="/api/placeholder/600/300" alt="Promoție jucării educative" class="img-fluid w-100">
+                    <div class="position-absolute top-0 bottom-0 start-0 end-0 bg-dark bg-opacity-50 d-flex flex-column justify-content-center align-items-center text-white p-4">
+                        <h3 class="display-6 fw-bold">2+1 Gratuit</h3>
+                        <p class="lead">La toate jucăriile educative</p>
+                        <a href="#" class="btn btn-toy mt-3">Vezi Oferta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Brands Section -->
+<section class="my-5 py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Branduri Populare</h2>
+
+        <div class="row align-items-center justify-content-center">
+            @foreach (var brand in new[] { "LEGO", "Playmobil", "Barbie", "Hot Wheels", "Fisher-Price", "Nerf" })
+            {
+            <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
+                <div class="bg-white p-3 rounded shadow-sm">
+                    <h5>@brand</h5>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="my-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Ce Spun Clienții Noștri</h2>
+
+        <div class="row">
+            @foreach (var testimonial in new[]
+            {
+                new { Name = "Maria P.", Text = "Jucării de calitate și livrare rapidă. Copilul meu este foarte încântat de setul de constructie LEGO!" },
+                new { Name = "Andrei C.", Text = "Cel mai bun magazin de jucării! Prețuri bune și o varietate imensă de produse pentru toate vârstele." },
+                new { Name = "Elena D.", Text = "Serviciu clienți excelent! Au rezolvat rapid o problemă cu comanda mea și au oferit un discount pentru următoarea achiziție." }
+            })
+            {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex text-warning mb-3">
+                            @for (int i = 0; i < 5; i++)
+                                {
+                            <i class="fas fa-star"></i>
+                                }
+                        </div>
+                        <p class="card-text">@testimonial.Text</p>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-user-circle fa-2x text-secondary me-3"></i>
+                            <h5 class="mb-0">@testimonial.Name</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2>Abonează-te la Newsletter</h2>
+                <p class="lead">Primește noutăți despre produsele și promoțiile noastre direct în inbox!</p>
+            </div>
+            <div class="col-lg-6">
+                <form class="d-flex">
+                    <input type="email" class="form-control form-control-lg me-2" placeholder="Adresa ta de email">
+                    <button type="submit" class="btn btn-warning btn-lg">Abonează-te</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits -->
+<section class="my-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="p-4">
+                    <i class="fas fa-truck fa-3x mb-3 text-primary"></i>
+                    <h4>Livrare Rapidă</h4>
+                    <p>În toată țara în 24-48 ore</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="p-4">
+                    <i class="fas fa-undo fa-3x mb-3 text-primary"></i>
+                    <h4>Retur Gratuit</h4>
+                    <p>În 30 de zile de la achiziție</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="p-4">
+                    <i class="fas fa-lock fa-3x mb-3 text-primary"></i>
+                    <h4>Plată Sigură</h4>
+                    <p>Sisteme sigure de plată online</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="p-4">
+                    <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
+                    <h4>Suport 24/7</h4>
+                    <p>Asistență clienți non-stop</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS Styles specifically for this page -->
+<style>
+    .product-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+    }
+
+    .hero-section {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-radius: 0 0 30% 30% / 20%;
+        padding: 100px 0 120px;
+        margin-bottom: 50px;
+    }
+
+    .promo-card {
+        transition: transform 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .promo-card:hover {
+        transform: scale(1.03);
+    }
+
+    #categorii h2::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: var(--accent-color);
+        margin: 15px auto 0;
+    }
+
+    @@media (max-width: 768px) {
+        .hero-section {
+            padding: 60px 0 80px;
+            border-radius: 0 0 15% 15% / 10%;
+        }
+    }
+</style>
