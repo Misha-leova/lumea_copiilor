@@ -1,0 +1,393 @@
+﻿@{
+    ViewData["Title"] = "Noutăți";
+}
+
+<div class="noutati-hero my-4">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h1 class="display-4 fw-bold text-primary">Noutăți în Lumea Jucăriilor</h1>
+            <p class="lead">Descoperă cele mai recente jucării, promoții și evenimente speciale pentru cei mici!</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="/api/placeholder/600/400" alt="Noutăți jucării" class="img-fluid rounded shadow-lg" />
+        </div>
+    </div>
+</div>
+
+<div class="my-5">
+    <ul class="nav nav-pills mb-4 justify-content-center" id="noutati-tab" role="tablist">
+        <li class="nav-item mx-2" role="presentation">
+            <button class="btn btn-toy active" id="produse-tab" data-bs-toggle="pill" data-bs-target="#produse" type="button" role="tab" aria-controls="produse" aria-selected="true">Produse Noi</button>
+        </li>
+        <li class="nav-item mx-2" role="presentation">
+            <button class="btn btn-toy" id="promotii-tab" data-bs-toggle="pill" data-bs-target="#promotii" type="button" role="tab" aria-controls="promotii" aria-selected="false">Promoții</button>
+        </li>
+        <li class="nav-item mx-2" role="presentation">
+            <button class="btn btn-toy" id="evenimente-tab" data-bs-toggle="pill" data-bs-target="#evenimente" type="button" role="tab" aria-controls="evenimente" aria-selected="false">Evenimente</button>
+        </li>
+        <li class="nav-item mx-2" role="presentation">
+            <button class="btn btn-toy" id="blog-tab" data-bs-toggle="pill" data-bs-target="#blog" type="button" role="tab" aria-controls="blog" aria-selected="false">Blog</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="noutati-tabContent">
+        <!-- Produse Noi -->
+        <div class="tab-pane fade show active" id="produse" role="tabpanel" aria-labelledby="produse-tab">
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-warning p-3 rounded-pill text-center">
+                        <i class="fas fa-gift fa-lg me-2"></i> Toate produsele noi beneficiază de <strong>10% reducere</strong> în prima săptămână!
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                @for (int i = 1; i <= 6; i++)
+                {
+                <div class="col-md-4 mb-4">
+                    <div class="category-card h-100">
+                        <div class="position-relative">
+                            <img src="/api/placeholder/400/300" alt="Jucărie nouă @i" class="img-fluid" />
+                            <span class="position-absolute top-0 start-0 bg-danger text-white p-2 m-2 rounded-pill">Nou</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Jucărie Nouă @i</h5>
+                                <span class="badge bg-primary rounded-pill">@(99 + i * 10) lei</span>
+                            </div>
+                            <p class="card-text">O descriere captivantă pentru această jucărie minunată, perfectă pentru copii de toate vârstele.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Adăugat: @(DateTime.Now.AddDays(-i).ToString("dd MMM yyyy"))</small>
+                                <div>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-toy">
+                                    <i class="fas fa-shopping-cart me-2"></i> Adaugă în coș
+                                </a>
+                                <a href="#" class="btn btn-outline-secondary">
+                                    <i class="fas fa-eye me-2"></i> Vezi detalii
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-lg btn-toy px-5">
+                    <i class="fas fa-plus-circle me-2"></i> Vezi mai multe produse noi
+                </a>
+            </div>
+        </div>
+
+        <!-- Promoții -->
+        <div class="tab-pane fade" id="promotii" role="tabpanel" aria-labelledby="promotii-tab">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="category-card h-100 bg-primary text-white">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/api/placeholder/300/300" alt="Promoție 1" class="img-fluid h-100" style="object-fit: cover;" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h4 class="card-title">Super Weekendul Reducerilor</h4>
+                                    <p class="card-text">Bucură-te de reduceri de până la 50% la jucăriile educative în acest weekend!</p>
+                                    <p class="card-text mb-1"><i class="fas fa-calendar-alt me-2"></i> 15-17 Martie 2025</p>
+                                    <a href="#" class="btn btn-light mt-3">Vezi ofertele</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="category-card h-100 bg-secondary text-white">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/api/placeholder/300/300" alt="Promoție 2" class="img-fluid h-100" style="object-fit: cover;" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h4 class="card-title">2+1 Gratuit la Jucării Lego</h4>
+                                    <p class="card-text">La achiziția a două seturi Lego, primești al treilea set gratuit (de valoare egală sau mai mică).</p>
+                                    <p class="card-text mb-1"><i class="fas fa-calendar-alt me-2"></i> Până pe 31 Martie 2025</p>
+                                    <a href="#" class="btn btn-light mt-3">Află mai multe</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="category-card bg-accent text-dark">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="mb-3">Voucher Cadou pentru Ziua Copilului</h3>
+                            <p class="lead">Achiziționează un voucher în valoare de 200 lei și primești credit suplimentar de 50 lei!</p>
+                            <p><i class="fas fa-gift fa-2x my-3"></i></p>
+                            <a href="#" class="btn btn-dark btn-lg px-5">Cumpără Voucherul</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evenimente -->
+        <div class="tab-pane fade" id="evenimente" role="tabpanel" aria-labelledby="evenimente-tab">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 mb-5">
+                    <div class="category-card mb-4 border-primary border-2">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-calendar-day fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h3 class="mb-0">Atelier de Creație: Păpuși Handmade</h3>
+                                    <p class="text-muted mb-0">20 Martie 2025, 14:00 - 17:00</p>
+                                </div>
+                            </div>
+                            <p>Alătură-te nouă pentru un atelier distractiv unde copiii vor învăța să creeze propriile păpuși din materiale textile. Toate materialele sunt incluse în prețul biletului.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-success me-2">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Magazinul Central
+                                    </span>
+                                    <span class="badge bg-info">
+                                        <i class="fas fa-child me-1"></i> 6-12 ani
+                                    </span>
+                                </div>
+                                <a href="#" class="btn btn-toy">Rezervă un loc</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card mb-4 border-secondary border-2">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-secondary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-robot fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h3 class="mb-0">Demo Jucării Robotice</h3>
+                                    <p class="text-muted mb-0">25 Martie 2025, 12:00 - 18:00</p>
+                                </div>
+                            </div>
+                            <p>Vino să testezi cele mai noi jucării robotice împreună cu reprezentanții producătorilor. Demonstrații live, concursuri și premii surpriză pentru participanți!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-success me-2">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Toate magazinele
+                                    </span>
+                                    <span class="badge bg-info">
+                                        <i class="fas fa-child me-1"></i> Toate vârstele
+                                    </span>
+                                </div>
+                                <a href="#" class="btn btn-toy">Detalii eveniment</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card border-primary border-2">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-gifts fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h3 class="mb-0">Târg de Jucării Vintage</h3>
+                                    <p class="text-muted mb-0">1-2 Aprilie 2025, 10:00 - 20:00</p>
+                                </div>
+                            </div>
+                            <p>Un eveniment special pentru colecționari și nostalgici! Jucării vintage, ediții limitate și piese de colecție disponibile pentru vânzare și schimb în cadrul acestui târg exclusivist.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-success me-2">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Centrul Comercial Bucuria
+                                    </span>
+                                    <span class="badge bg-warning text-dark">
+                                        <i class="fas fa-star me-1"></i> Intrare cu bilet
+                                    </span>
+                                </div>
+                                <a href="#" class="btn btn-toy">Cumpără bilet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog -->
+        <div class="tab-pane fade" id="blog" role="tabpanel" aria-labelledby="blog-tab">
+            <div class="row">
+                <div class="col-md-8">
+                    <article class="category-card mb-4">
+                        <img src="/api/placeholder/800/400" alt="Articol blog" class="img-fluid" />
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="/api/placeholder/50/50" alt="Avatar" class="rounded-circle me-2" />
+                                <div>
+                                    <h6 class="mb-0">Ana Popescu</h6>
+                                    <small class="text-muted">Publicat: 10 Martie 2025</small>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Top 10 Jucării Educative pentru Dezvoltarea Abilităților Cognitive</h3>
+                            <p class="card-text">Aflați care sunt cele mai bune jucării pentru stimularea dezvoltării cognitive a copiilor, recomandate de specialiști în educație timpurie și psihologie infantilă.</p>
+                            <p>În acest articol, explorăm beneficiile jucăriilor educative și cum acestea pot influența pozitiv dezvoltarea abilităților cognitive ale copilului tău. De la jocuri de logică la puzzle-uri și seturi de construcție, descoperă care sunt opțiunile potrivite pentru fiecare etapă de dezvoltare.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <div>
+                                    <span class="badge bg-primary me-1">Educație</span>
+                                    <span class="badge bg-secondary me-1">Dezvoltare</span>
+                                    <span class="badge bg-info">3-7 ani</span>
+                                </div>
+                                <a href="#" class="btn btn-toy">Citește mai mult</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="category-card">
+                        <img src="/api/placeholder/800/400" alt="Articol blog" class="img-fluid" />
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="/api/placeholder/50/50" alt="Avatar" class="rounded-circle me-2" />
+                                <div>
+                                    <h6 class="mb-0">Mihai Ionescu</h6>
+                                    <small class="text-muted">Publicat: 5 Martie 2025</small>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Cum să Organizezi Camera Copilului pentru Joacă și Învățare</h3>
+                            <p class="card-text">Ghid complet pentru organizarea eficientă a spațiului de joacă al copilului tău, astfel încât să stimulezi creativitatea și învățarea.</p>
+                            <p>Organizarea spațiului de joacă poate face diferența între haos și o experiență plăcută atât pentru copii, cât și pentru părinți. În acest articol îți oferim sfaturi practice și idei de organizare adaptate pentru diferite vârste și tipuri de camere.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <div>
+                                    <span class="badge bg-success me-1">Organizare</span>
+                                    <span class="badge bg-warning text-dark me-1">Decor</span>
+                                    <span class="badge bg-danger">Sfaturi Părinți</span>
+                                </div>
+                                <a href="#" class="btn btn-toy">Citește mai mult</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="category-card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="card-title border-bottom pb-3 mb-3">Categorii Blog</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Sfaturi pentru părinți
+                                    <span class="badge bg-primary rounded-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Jucării educative
+                                    <span class="badge bg-primary rounded-pill">21</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Recenzii produse
+                                    <span class="badge bg-primary rounded-pill">18</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    DIY și activități
+                                    <span class="badge bg-primary rounded-pill">9</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Aniversări și evenimente
+                                    <span class="badge bg-primary rounded-pill">7</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category-card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="card-title border-bottom pb-3 mb-3">Articole Populare</h4>
+                            <div class="mb-3">
+                                <div class="row g-0">
+                                    <div class="col-3">
+                                        <img src="/api/placeholder/80/80" alt="Articol" class="img-fluid rounded" />
+                                    </div>
+                                    <div class="col-9 ps-3">
+                                        <h6 class="mb-1">Cum să alegeți prima jucărie pentru bebeluș</h6>
+                                        <small class="text-muted">4.2k vizualizări</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="row g-0">
+                                    <div class="col-3">
+                                        <img src="/api/placeholder/80/80" alt="Articol" class="img-fluid rounded" />
+                                    </div>
+                                    <div class="col-9 ps-3">
+                                        <h6 class="mb-1">Top 5 seturi LEGO pentru 2025</h6>
+                                        <small class="text-muted">3.8k vizualizări</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row g-0">
+                                    <div class="col-3">
+                                        <img src="/api/placeholder/80/80" alt="Articol" class="img-fluid rounded" />
+                                    </div>
+                                    <div class="col-9 ps-3">
+                                        <h6 class="mb-1">Jucării electronice vs. tradiționale</h6>
+                                        <small class="text-muted">3.5k vizualizări</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card text-center p-4 bg-accent text-dark">
+                        <h5 class="mb-3">Abonează-te la newsletter</h5>
+                        <p>Primește noutăți, oferte și articole interesante direct în inbox-ul tău!</p>
+                        <form>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Adresa ta de email">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Abonează-te</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-5 py-4 bg-accent rounded-3">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h3 class="mb-2">Nu rata ultimele noutăți!</h3>
+                <p class="mb-md-0">Abonează-te la newsletter-ul nostru și primește informații despre produsele noi și ofertele speciale.</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="#" class="btn btn-dark btn-lg">
+                    <i class="far fa-envelope me-2"></i> Abonează-te acum
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@section Scripts {
+    <script>
+        // Inițializare tabs
+        var tabList = document.querySelectorAll('#noutati-tab button')
+        tabList.forEach(function (tab) {
+            tab.addEventListener('click', function (event) {
+                event.preventDefault()
+                var tabTrigger = new bootstrap.Tab(tab)
+                tabTrigger.show()
+            })
+        })
+    </script>
+}
