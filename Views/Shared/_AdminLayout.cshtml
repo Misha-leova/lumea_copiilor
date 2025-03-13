@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        /* Stiluri personalizate pentru bara de navigare verticală */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40; /* Culoare întunecată pentru sidebar */
+            padding-top: 20px;
+        }
+
+            .sidebar a {
+                padding: 10px 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: white;
+                display: block;
+                transition: background-color 0.3s;
+            }
+
+                .sidebar a:hover {
+                    background-color: #495057; /* Culoare la hover */
+                }
+
+        .main-content {
+            margin-left: 250px; /* Spațiu pentru sidebar */
+            padding: 20px;
+        }
+
+        @@media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+                .sidebar a {
+                    float: left;
+                }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        @@media (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a asp-controller="Admin" asp-action="Index">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+        <a asp-controller="Admin" asp-action="Products">
+            <i class="fas fa-box"></i> Produse
+        </a>
+        <a asp-controller="Admin" asp-action="Users">
+            <i class="fas fa-users"></i> Utilizatori
+        </a>
+        <a asp-controller="Admin" asp-action="Settings">
+            <i class="fas fa-cog"></i> Setări
+        </a>
+    </div>
+
+    <!-- Conținutul principal -->
+    <div class="main-content">
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
